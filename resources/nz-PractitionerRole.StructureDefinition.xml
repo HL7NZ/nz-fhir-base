@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://example.org/fhir/StructureDefinition/nz-PractitionerRole" />
+  <name value="nz-PractitionerRole" />
+  <status value="draft" />
+  <fhirVersion value="3.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="PractitionerRole" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/PractitionerRole" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="PractitionerRole.identifier">
+      <path value="PractitionerRole.identifier" />
+      <slicing>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="PractitionerRole.identifier:hpi-cpn-at-facility">
+      <path value="PractitionerRole.identifier" />
+      <sliceName value="hpi-cpn-at-facility" />
+    </element>
+    <element id="PractitionerRole.identifier:hpi-cpn-at-facility.type">
+      <path value="PractitionerRole.identifier.type" />
+      <definition value="National provider at facility identifier; CPN@Facility eg. 18ABCD@FB9964-G" />
+    </element>
+    <element id="PractitionerRole.identifier:hpi-cpn-at-facility.type.coding.system">
+      <path value="PractitionerRole.identifier.type.coding.system" />
+      <fixedUri value="http://hl7.org.nz/fhir/v2/0203" />
+    </element>
+    <element id="PractitionerRole.identifier:hpi-cpn-at-facility.type.coding.code">
+      <path value="PractitionerRole.identifier.type.coding.code" />
+      <fixedCode value="NPIO" />
+    </element>
+  </differential>
+</StructureDefinition>
