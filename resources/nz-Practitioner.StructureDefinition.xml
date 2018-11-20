@@ -20,35 +20,35 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="Practitioner.identifier:hpi-cpn">
+    <element id="Practitioner.identifier:hpi-person">
       <path value="Practitioner.identifier" />
-      <sliceName value="hpi-cpn" />
+      <sliceName value="hpi-person" />
     </element>
-    <element id="Practitioner.identifier:hpi-cpn.type.coding">
+    <element id="Practitioner.identifier:hpi-person.type.coding">
       <path value="Practitioner.identifier.type.coding" />
       <min value="1" />
     </element>
-    <element id="Practitioner.identifier:hpi-cpn.type.coding.system">
+    <element id="Practitioner.identifier:hpi-person.type.coding.system">
       <path value="Practitioner.identifier.type.coding.system" />
       <fixedUri value="http://hl7.org/fhir/v2/0203" />
     </element>
-    <element id="Practitioner.identifier:hpi-cpn.type.coding.code">
+    <element id="Practitioner.identifier:hpi-person.type.coding.code">
       <path value="Practitioner.identifier.type.coding.code" />
       <fixedCode value="NPI" />
     </element>
-    <element id="Practitioner.identifier:hpi-cpn.type.text">
+    <element id="Practitioner.identifier:hpi-person.type.text">
       <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
         <valueBoolean value="true" />
       </extension>
       <path value="Practitioner.identifier.type.text" />
       <fixedString value="HPI CPN" />
     </element>
-    <element id="Practitioner.identifier:hpi-cpn.system">
+    <element id="Practitioner.identifier:hpi-person.system">
       <path value="Practitioner.identifier.system" />
       <definition value="This namespace is used for the HPI identifiers assigned to health practitioners who are registered with responsible authorities. Also known as the Common person number (CPN)&#xD;&#xA;&#xD;&#xA;For more information on the HPI person ID see the Ministry of Health’s website." />
       <fixedUri value="https://standards.digital.health.nz/id/hpi-person" />
     </element>
-    <element id="Practitioner.identifier:hpi-cpn.value">
+    <element id="Practitioner.identifier:hpi-person.value">
       <path value="Practitioner.identifier.value" />
       <definition value="https://www.health.govt.nz/system/files/documents/pages/hpi_identifiers_validation_routine_.doc" />
       <min value="1" />

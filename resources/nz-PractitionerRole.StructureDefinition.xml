@@ -16,21 +16,124 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="PractitionerRole.identifier:hpi-cpn-at-facility">
+    <element id="PractitionerRole.identifier:hpi-person-at-facility">
       <path value="PractitionerRole.identifier" />
-      <sliceName value="hpi-cpn-at-facility" />
+      <sliceName value="hpi-person-at-facility" />
     </element>
-    <element id="PractitionerRole.identifier:hpi-cpn-at-facility.type">
+    <element id="PractitionerRole.identifier:hpi-person-at-facility.type">
       <path value="PractitionerRole.identifier.type" />
+      <short value="Identifier type for [HPI Person@HPI Facility" />
       <definition value="National provider at facility identifier; CPN@Facility eg. 18ABCD@FB9964-G" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="IdentifierType" />
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
+          <valueBoolean value="true" />
+        </extension>
+        <strength value="required" />
+        <description value="Local identifier type" />
+        <valueSetReference>
+          <reference value="http://hl7.org.nz/fhir/ValueSet/nz-hl7v2-0203" />
+        </valueSetReference>
+      </binding>
     </element>
-    <element id="PractitionerRole.identifier:hpi-cpn-at-facility.type.coding.system">
+    <element id="PractitionerRole.identifier:hpi-person-at-facility.type.coding">
+      <path value="PractitionerRole.identifier.type.coding" />
+      <max value="1" />
+    </element>
+    <element id="PractitionerRole.identifier:hpi-person-at-facility.type.coding.system">
       <path value="PractitionerRole.identifier.type.coding.system" />
+      <min value="1" />
       <fixedUri value="http://hl7.org.nz/fhir/v2/0203" />
     </element>
-    <element id="PractitionerRole.identifier:hpi-cpn-at-facility.type.coding.code">
+    <element id="PractitionerRole.identifier:hpi-person-at-facility.type.coding.code">
       <path value="PractitionerRole.identifier.type.coding.code" />
+      <min value="1" />
       <fixedCode value="NPIO" />
     </element>
+    <element id="PractitionerRole.identifier:hpi-person-at-facility.system">
+      <path value="PractitionerRole.identifier.system" />
+      <min value="1" />
+      <fixedUri value="http://hl7.org.nz/id/npio" />
+    </element>
+    <element id="PractitionerRole.identifier:hpi-person-at-facility.value">
+      <path value="PractitionerRole.identifier.value" />
+      <min value="1" />
+      <fixedString value="http://hl7.org.nz/id/npio" />
+    </element>
+    <element id="PractitionerRole.identifier:hpi-person-at-hpi-organisation">
+      <path value="PractitionerRole.identifier" />
+      <sliceName value="hpi-person-at-hpi-organisation" />
+    </element>
+    <element id="PractitionerRole.identifier:hpi-person-at-hpi-organisation.type">
+      <path value="PractitionerRole.identifier.type" />
+      <short value="Identifier type for [HPI Person@HPI Organisation]" />
+      <definition value="National provider at organisation identifier; CPN@Facility eg. 18ABCD@GC8975-J" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="IdentifierType" />
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
+          <valueBoolean value="true" />
+        </extension>
+        <strength value="required" />
+        <description value="Local identifier type" />
+        <valueSetReference>
+          <reference value="http://hl7.org.nz/fhir/ValueSet/nz-hl7v2-0203" />
+        </valueSetReference>
+      </binding>
+    </element>
+    <element id="PractitionerRole.identifier:hpi-person-at-hpi-organisation.type.coding">
+      <path value="PractitionerRole.identifier.type.coding" />
+      <max value="1" />
+    </element>
+    <element id="PractitionerRole.identifier:hpi-person-at-hpi-organisation.type.coding.system">
+      <path value="PractitionerRole.identifier.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://hl7.org.nz/fhir/v2/0203" />
+    </element>
+    <element id="PractitionerRole.identifier:hpi-person-at-hpi-organisation.type.coding.code">
+      <path value="PractitionerRole.identifier.type.coding.code" />
+      <min value="1" />
+      <fixedCode value="NPIO" />
+    </element>
+    <element id="PractitionerRole.identifier:hpi-person-at-hpi-organisation.system">
+      <path value="PractitionerRole.identifier.system" />
+      <min value="1" />
+      <fixedUri value="http://hl7.org.nz/id/npio" />
+    </element>
+    <element id="PractitionerRole.identifier:hpi-person-at-hpi-organisation.value">
+      <path value="PractitionerRole.identifier.value" />
+      <min value="1" />
+    </element>
+    <element id="PractitionerRole.specialty">
+      <path value="PractitionerRole.specialty" />
+      <short value="Practitioner specialties" />
+    </element>
+    <element id="PractitionerRole.specialty.coding">
+      <path value="PractitionerRole.specialty.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <short value="Specialty codings for a role" />
+    </element>
+    <element id="PractitionerRole.specialty.coding:snomedctSpecialty">
+      <path value="PractitionerRole.specialty.coding" />
+      <sliceName value="snomedctSpecialty" />
+      <short value="SNOMED CT Practitioner Specialty" />
+      <definition value=" Specialties for which this practitioner has capability to deliver in this role coded as SNOMED CT." />
+      <binding>
+        <strength value="required" />
+        <description value="SNOMED CT Practitioner Role" />
+        <valueSetReference>
+          <reference value="https://healthterminologies.gov.au/fhir/ValueSet/practitioner-role-1 " />
+        </valueSetReference>
+      </binding>
+    </element>	
   </differential>
 </StructureDefinition>

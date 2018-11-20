@@ -1,0 +1,28 @@
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../fhir-all-xsd/valueset.xsd">
+	<id value="nz-snomed-healthcareservice-services"/>
+	<url value="http://hl7.org.nz/fhir/ValueSet/nz-snomed-healthcareservice-services"/>
+	<version value="1.0.0"/>
+	<name value="HealthcareServiceRolesSNOMED"/>
+	<title value="Healthcare Service Roles (SNOMED)"/>
+	<status value="draft"/>
+	<date value="2018-11-20"/>
+	<publisher value="Health Level Seven New Zealand"/>
+	<contact>
+		<name value="hl7.org.nz"/>
+	</contact>
+	<description value="Healthcare service roles (SNOMED) - healthcare and other service roles a service may provide."/>
+	<compose>
+		<include>
+			<system value="http://snomed.info/sct"/>
+			<version value="http://snomed.info/sct/21000210109"/>
+			<filter>
+				<property value="concept"/>
+				<op value="is-a"/>
+				<value value="224891009"/>
+			</filter>
+		</include>	
+		<include>
+			<valueSet value="http://hl7.org.au/fhir/ValueSet/snomed-healthcareservice-services"/>
+		</include>
+	</compose>
+</ValueSet>

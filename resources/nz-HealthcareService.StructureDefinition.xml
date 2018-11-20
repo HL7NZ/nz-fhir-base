@@ -26,22 +26,80 @@
       <short value="Healthcare Provider Index – Facility Identifier" />
       <definition value="National identifier Health Provider Index for Facility Identifier" />
     </element>
+    <element id="HealthcareService.identifier:hpi-facility-identifier.type">
+      <path value="HealthcareService.identifier.type" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="IdentifierType" />
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
+          <valueBoolean value="true" />
+        </extension>
+        <strength value="required" />
+        <description value="Local identifier type" />
+        <valueSetReference>
+          <reference value="http://hl7.org.nz/fhir/ValueSet/nz-hl7v2-0203" />
+        </valueSetReference>
+      </binding>
+    </element>
+    <element id="HealthcareService.identifier:hpi-facility-identifier.type.coding">
+      <path value="HealthcareService.identifier.type.coding" />
+      <max value="1" />
+    </element>
     <element id="HealthcareService.identifier:hpi-facility-identifier.type.coding.system">
       <path value="HealthcareService.identifier.type.coding.system" />
+      <min value="1" />
       <fixedUri value="http://hl7.org/fhir/v2/0203" />
     </element>
     <element id="HealthcareService.identifier:hpi-facility-identifier.type.coding.code">
       <path value="HealthcareService.identifier.type.coding.code" />
+      <min value="1" />
       <fixedCode value="FI" />
+    </element>
+    <element id="HealthcareService.identifier:hpi-facility-identifier.type.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="HealthcareService.identifier.type.text" />
+      <definition value="HPI Facility Identifier" />
+      <fixedString value="HPI Facility Id" />
     </element>
     <element id="HealthcareService.identifier:hpi-facility-identifier.system">
       <path value="HealthcareService.identifier.system" />
       <definition value="This namespace is used for the HPI identifiers assigned to health facilities in New Zealand.&#xD;&#xA;&#xD;&#xA;For more information on the HPI facility ID see the Ministry of Health’s website.&#xD;&#xA;&#xD;&#xA;https://www.health.govt.nz/our-work/health-identity/health-provider-index" />
+      <min value="1" />
       <fixedUri value="https://standards.digital.health.nz/id/hpi-facility" />
     </element>
     <element id="HealthcareService.identifier:hpi-facility-identifier.value">
       <path value="HealthcareService.identifier.value" />
+      <short value="HPI Facility Identifier" />
       <definition value="https://www.health.govt.nz/system/files/documents/pages/hpi_identifiers_validation_routine_.doc" />
+      <min value="1" />
+    </element>
+    <element id="HealthcareService.specialty">
+      <path value="HealthcareService.specialty" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="coding.system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="HealthcareService.specialty:nz-snomedRole">
+      <path value="HealthcareService.specialty" />
+      <sliceName value="nz-snomedRole" />
+      <short value="Healthcare Service Specialty SNOMED CT" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="service-specialty" />
+        </extension>
+        <strength value="required" />
+        <description value="Healthcare Specialties" />
+        <valueSetReference>
+          <reference value="http://hl7.org.nz/fhir/ValueSet/snomed-healthcareservice-services" />
+        </valueSetReference>
+      </binding>
     </element>
   </differential>
 </StructureDefinition>

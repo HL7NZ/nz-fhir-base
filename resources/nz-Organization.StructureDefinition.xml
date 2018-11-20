@@ -23,6 +23,20 @@
     <element id="Organization.identifier:hpi-organisation-identifier">
       <path value="Organization.identifier" />
       <sliceName value="hpi-organisation-identifier" />
+      <short value="HPI Organisation ID" />
+      <definition value="HPI identifiers assigned to health organisations in New Zealand." />
+    </element>
+    <element id="Organization.identifier:hpi-organisation-identifier.type">
+      <path value="Organization.identifier.type" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="IdentifierType" />
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
+          <valueBoolean value="true" />
+        </extension>
+        <strength value="required" />
+      </binding>
     </element>
     <element id="Organization.identifier:hpi-organisation-identifier.type.coding">
       <path value="Organization.identifier.type.coding" />
